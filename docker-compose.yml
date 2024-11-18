@@ -5,13 +5,13 @@ services:
     container_name: db
     image: postgres:latest
     environment:
-      POSTGRES_DB: northwind
+      POSTGRES_DB: transactions
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
       - postgresql_bin:/usr/lib/postgresql
       - postgresql_data:/var/lib/postgresql/data
-      - ./northwind.sql:/docker-entrypoint-initdb.d/northwind.sql
+      - ./transactions.sql:/docker-entrypoint-initdb.d/transactions.sql
       - ./files:/files
     ports:
       - 55432:5432
